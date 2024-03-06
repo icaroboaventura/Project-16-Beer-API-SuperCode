@@ -6,7 +6,7 @@ const AllBeers = () => {
   const [data, setData] = useState();
 
   useEffect(() => {
-    fetch("https://api.punkapi.com/v2/beers")
+    fetch("https://ih-beers-api2.herokuapp.com/beers")
       .then((res) => res.json())
       .then((dataApi) => setData(dataApi))
       .catch((err) => console.error("Fehler :-(", err));
@@ -29,7 +29,7 @@ const AllBeers = () => {
                 <h3>{beer.name}</h3>
                 <h4>{beer.tagline}</h4>
                 <p>Created by: {beer.name}</p>
-                <Link to={`/all/${beer.id}`}>Details</Link>
+                <Link to={`/all/${beer._id}`}>Details</Link>
               </div>
             </article>
           ))

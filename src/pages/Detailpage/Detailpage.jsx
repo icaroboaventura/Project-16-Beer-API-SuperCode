@@ -7,16 +7,16 @@ const DetailPage = () => {
   const [dataPage, setDataPage] = useState([]);
 
   useEffect(() => {
-    fetch("https://api.punkapi.com/v2/beers")
+    fetch("https://ih-beers-api2.herokuapp.com/beers")
       .then((res) => res.json())
       .then((dataApi) => setData(dataApi))
       .catch((err) => console.error("Fehler :-(", err));
   }, []);
 
-  const { id } = useParams();
+  const { _id } = useParams();
 
   useEffect(() => {
-    const find = data.find((item) => Number(item.id) === Number(id));
+    const find = data.find((item) => String(item._id) === String(_id));
     setDataPage(find);
   }, [data]);
 
