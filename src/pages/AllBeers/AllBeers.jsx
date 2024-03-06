@@ -16,7 +16,10 @@ const AllBeers = () => {
 
   return (
     <>
-      <h2>All Beers</h2>
+      <div>
+        <h2>All Beers</h2>
+        <Link to={`/`}>Back</Link>
+      </div>
       <section className="products">
         {data ? (
           data.map((beer, index) => (
